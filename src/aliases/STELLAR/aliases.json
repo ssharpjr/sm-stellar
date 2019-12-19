@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Check Current Haul",
+    "regex": "^hcheck$"
+  },
+  {
+    "name": "Refinery List Here",
+    "regex": "^refh$"
+  },
+  {
+    "name": "Refine Asteroid",
+    "regex": "^refqa (\\d+)"
+  },
+  {
+    "name": "Refine Gas",
+    "regex": "^refqg (\\d+)"
+  },
+  {
+    "name": "Help System Single Page",
+    "regex": "^(help|Help|HELP) (stellar|Stellar|STELLAR) (single|Single|SINGLE)$"
+  },
+  {
+    "name": "Help System",
+    "regex": "^(help|Help|HELP) (stellar|Stellar|STELLAR)$"
+  },
+  {
+    "name": "Show Tracking Report",
+    "regex": "^sreport"
+  }
+]

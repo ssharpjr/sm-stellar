@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Initialization"
+  },
+  {
+    "name": "NOTES Known Issues",
+    "isActive": "no"
+  },
+  {
+    "name": "NOTES TODOs",
+    "isActive": "no"
+  },
+  {
+    "name": "Core Functions"
+  },
+  {
+    "name": "Misc Functions"
+  },
+  {
+    "name": "Save-Load Functions"
+  },
+  {
+    "name": "Show Tracking Report"
+  },
+  {
+    "name": "Help Functions"
+  },
+  {
+    "name": "Harvestables Colors"
+  },
+  {
+    "name": "Example Console Output",
+    "isActive": "no"
+  }
+]

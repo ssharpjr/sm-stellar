@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Start Beacon Capture",
+    "patterns": [
+      {
+        "pattern": "------------------------------< Entities Nearby >------------------------------",
+        "type": "startOfLine"
+      }
+    ]
+  },
+  {
+    "name": "STELLAR Beacon Capture",
+    "patterns": [
+      {
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a (.*) of harvestable\\s(\\S+)",
+        "type": "regex"
+      },
+      {
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a (.*)\\s(\\w+)\\s\\(\\#(\\d+)\\)",
+        "type": "regex"
+      },
+      {
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a\\s(\\w+)\\scalled\\s(.*)",
+        "type": "regex"
+      },
+      {
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+the\\s(\\w+)\\s(.*)",
+        "type": "regex"
+      },
+      {
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a\\s(\\w+)\\s(.*)",
+        "type": "regex"
+      }
+    ]
+  }
+]
