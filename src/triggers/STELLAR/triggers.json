@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Highlight Harvestables",
+    "patterns": [
+      {
+        "pattern": "a cloud of harvestable",
+        "type": "substring"
+      },
+      {
+        "pattern": "a mineable asteroid",
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Asteroid Collision",
+    "patterns": [
+      {
+        "pattern": "^(.+) halts gracefully to avoid collision with (\\w+)",
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Probing",
+    "patterns": [
+      {
+        "pattern": "^The ship launches a probe towards the asteroid.",
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Probe Result",
+    "patterns": [
+      {
+        "pattern": "^The probe reports a source of (.*), good for (\\d+) refined units of the material\\.$",
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Asteroid Tethering",
+    "patterns": [
+      {
+        "pattern": "The ship starts aiming at an asteroid, preparing to hook it up.",
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Asteroid Tethered",
+    "patterns": [
+      {
+        "pattern": "The ship shoots a multifield tether at an asteroid, catching it and hooking it to itself.",
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Gas Collection",
+    "patterns": [
+      {
+        "pattern": "^The ship collects the surrounding (.*) into its scoops, bringing the collected total to (\\d+)\\.$",
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Gas Depleted",
+    "patterns": [
+      {
+        "pattern": "^The gas cloud is entirely depleted.",
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Refining",
+    "patterns": [
+      {
+        "pattern": "^You queue up the (\\w+) for refining in refinery (\\d+), with an estimated return of (\\d+) units of (.*).$",
+        "type": "regex"
+      },
+      {
+        "pattern": "^You queue up the collected (\\w+) for refining in refinery (\\d+), with an estimated return of (\\d+) units of (.*).$",
+        "type": "regex"
+      }
+    ]
+  }
+]
