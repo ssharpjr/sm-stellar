@@ -1,9 +1,6 @@
 -- Mudlet Trigger Setup (minus the quotes)
 -- Data Line 1 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a (.*) of harvestable\s(\S+)"
 -- Data Line 2 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a (.*)\s(\w+)\s\(\#(\d+)\)"
--- Data Line 3 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a\s(\w+)\scalled\s(.*)"
--- Data Line 4 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+the\s(\w+)\s(.*)"
--- Data Line 5 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a\s(\w+)\s(.*)"
 
 
 -- Capture Example:
@@ -29,19 +26,6 @@ if matches[8] then
   -- Asteroids have this ID
   a_id = matches[8]
 end
-
--- -- BEGIN Sector Mapper
--- local entity_name = string.gsub(res, "%s+", "")  -- Trim trailing spaces
--- local entity_id = class.."_"..entity_name:lower().."_"..zone:lower().."_"..x.."_"..y
--- if class == "planet" or
-   -- class == "station" or
-   -- class == "sun" or
-   -- class == "voidgate" or
-   -- class == "asteroid" then
-  -- SECMAP.processBeacon(entity_id, zone, x, y, class, res)
-  -- return
--- end
--- -- END Sector Mapper
 
 -- Create unique resource ID
 res = res:lower()

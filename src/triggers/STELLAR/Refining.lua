@@ -23,12 +23,21 @@ resetFormat()
 echo("\n\n")
 
 -- Try to account for double hauling (asteroid and gas)
-if asteroid and gas then
-
+if STELLAR.asteroid and STELLAR.gas then
+  if STELLAR.asteroid and not STELLAR.gas then
+    -- Only hauling an asteroid, clear gas variables
+    STELLAR.gas = nil
+    STELLAR.gas_count = nil
+    STELLAR.gas_id = nil
+  elseif STELLAR.gas and not STELLAR.asteroid then
+    -- Only hauling gas, clear asteroid variables
+    STELLAR.asteroid = nil
+    STELLAR.asteroid_units = nil
+  end
+else
+  -- Clear all variables
+  STELLAR.resetVars()
 end
-
--- Clear all variables
-STELLAR.resetVars()
 
 -- Update Console
 STELLAR.UOF()

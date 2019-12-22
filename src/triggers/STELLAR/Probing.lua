@@ -3,7 +3,7 @@
 
 
 -- Immersive Aesthetics
-if cur_a_id then
+if STELLAR.cur_a_id then
   deleteLine()
-  STELLAR.echo("Probing Asteroid #"..cur_a_id.."...")
+  STELLAR.echo("Probing Asteroid #"..STELLAR.cur_a_id.."...")
 end

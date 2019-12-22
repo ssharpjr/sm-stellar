@@ -7,15 +7,16 @@
 -- Capture Example:
 -- The ship collects the surrounding Tritium into its scoops, bringing the collected total to 44.
 
--- asteroid = nil
--- asteroid_units = nil
-cur_a_id = nil
+-- STELLAR.asteroid = nil
+-- STELLAR.asteroid_units = nil
+-- STELLAR.cur_a_id = nil
 
-gas = matches[2]:lower()
-gas_count = matches[3]
+STELLAR.gas = matches[2]:lower()
+STELLAR.gas_count = matches[3]
 
 -- Set gas color
-if gas == "helium-11" then gas_color = "helium11" end
+local gas_color = ""
+if STELLAR.gas == "helium-11" then gas_color = "helium11" end
 local hcolor = STELLAR.harvest_colors[gas_color] or "white"
 local hcolor = "<"..hcolor..">"
 

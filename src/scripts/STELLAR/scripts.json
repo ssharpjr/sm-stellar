@@ -3,6 +3,10 @@
     "name": "Initialization"
   },
   {
+    "name": "NOTES Change Log",
+    "isActive": "no"
+  },
+  {
     "name": "NOTES Known Issues",
     "isActive": "no"
   },
@@ -27,9 +31,5 @@
   },
   {
     "name": "Harvestables Colors"
-  },
-  {
-    "name": "Example Console Output",
-    "isActive": "no"
   }
 ]

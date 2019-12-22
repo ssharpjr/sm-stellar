@@ -4,35 +4,35 @@
 
 -- Highlights the refinery that is capable of refining your current haul
 
-asteroid = asteroid or ""
-gas = gas or ""
+STELLAR.asteroid = STELLAR.asteroid or ""
+STELLAR.gas = STELLAR.gas or ""
 
-asteroid = asteroid:lower()
-gas = gas:lower()
+STELLAR.asteroid = STELLAR.asteroid:lower()
+STELLAR.gas = STELLAR.gas:lower()
 
 -- Determine haul
-if asteroid and tow_id then
+if STELLAR.asteroid and STELLAR.tow_id then
   -- Set names to refinery format
-  if asteroid == "isotropic duramine" then haul = "duramine"
+  if STELLAR.asteroid == "isotropic duramine" then STELLAR.haul = "duramine"
   else
-    haul = asteroid
+    STELLAR.haul = STELLAR.asteroid
   end
-elseif gas and gas_count then
+elseif STELLAR.gas and STELLAR.gas_count then
   -- Set names to refinery format
-  if gas == "helium-11" then haul = "helium11"
+  if STELLAR.gas == "helium-11" then STELLAR.haul = "helium11"
   else
-    haul = gas
+    STELLAR.haul = STELLAR.gas
   end
 end
 
 -- cecho("\n<red>haul = "..haul)
 
 -- Highlight the proper refinery
-if haul then
-  haul = haul:lower()
+if STELLAR.haul then
+  STELLAR.haul = STELLAR.haul:lower()
   if HaulHighlightID then killTrigger(HaulHighlightID) end
-  HaulHighlightID = tempTrigger(haul, function() selectString(line, 1) fg("gold") deselect() resetFormat() end)
-elseif haul == nil or haul == "" then 
+  HaulHighlightID = tempTrigger(STELLAR.haul, function() selectString(line, 1) fg("gold") deselect() resetFormat() end)
+elseif STELLAR.haul == nil or STELLAR.haul == "" then 
   killTrigger(HaulHighlightID)
 end
 
