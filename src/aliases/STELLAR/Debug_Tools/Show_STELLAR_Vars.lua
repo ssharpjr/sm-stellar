@@ -3,3 +3,4 @@
 
 
 STELLAR.showVars()
+echo("\n")

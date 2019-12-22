@@ -7,30 +7,30 @@
 
 deleteLine()
 
-tethered = true
+STELLAR.tethered = true
 
 -- Set current asteroid ID to tow_id
-if cur_a_id then
-  tow_id = cur_a_id
-  cur_a_id = ""
+if STELLAR.cur_a_id then
+  STELLAR.tow_id = STELLAR.cur_a_id
+  STELLAR.cur_a_id = ""
   -- gas = nil
   -- gas_count = nil
 end
 
 -- Set asteroid
 for k, v in pairs(stellardb) do
-  if stellardb[k]["a_id"] == tow_id then
-    asteroid = v.res
-    asteroid_units = v.a_units
+  if stellardb[k]["a_id"] == STELLAR.tow_id then
+    STELLAR.asteroid = v.res
+    STELLAR.asteroid_units = v.a_units
     break
   end
 end
 
-STELLAR.echo("Asteroid #"..tow_id.." tethered")
+STELLAR.echo("Asteroid #"..STELLAR.tow_id.." tethered")
 
 -- Remove tow_id asteroid from stellar DB
-if tow_id then
-  STELLAR.asteroidRemoveFromDB(tow_id)
+if STELLAR.tow_id then
+  STELLAR.asteroidRemoveFromDB(STELLAR.tow_id)
 end
 
 -- Update (until I figure out a better way to do it)

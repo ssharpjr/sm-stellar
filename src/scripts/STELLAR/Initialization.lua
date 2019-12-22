@@ -16,7 +16,7 @@
 STELLAR = STELLAR or {}
 stellardb = stellardb or {}
 
-STELLAR.version = "1.0"
+STELLAR.version = "0.2-beta"
 
 -- Set Update Output Function (replace with your miniconsole/label/whatever)
 function STELLAR.UOF()

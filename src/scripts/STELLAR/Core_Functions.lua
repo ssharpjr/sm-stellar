@@ -1,19 +1,18 @@
-
 -- Core Function of STELLAR
 function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_id)
   -- Check if ID is already in the table (duplicate check)
   for k, v in pairs(stellardb) do
     if res_id == stellardb[k]["res_id"] then
       -- ID is in the database
-      if asteroid and probed then
+      if STELLAR.asteroid and STELLAR.probed then
         -- It is an asteroid and it's from a probe so update the record
-        stellardb[k]["res"] = asteroid
-        stellardb[k]["a_units"] = asteroid_units
+        stellardb[k]["res"] = STELLAR.asteroid
+        stellardb[k]["a_units"] = STELLAR.asteroid_units
         -- Update the time so we know the record is fresh
         stellardb[k]["time"] = cur_time
         -- Clear probed
-        probed = false
-      elseif not probed then
+        STELLAR.probed = false
+      elseif not STELLAR.probed then
         -- ID exists and it's not from a probe (possibly a gas)
         -- Update the time to keep the record fresh
         stellardb[k]["time"] = cur_time
@@ -62,29 +61,29 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
       if stellardb[k]["a_id"] == a_id then
         -- Only set 'asteroid' if it has been identified
         if v.res ~= "asteroid" then
-          asteroid = v.res
-          asteroid_units = v.a_units
+          STELLAR.asteroid = v.res
+          STELLAR.asteroid_units = v.a_units
         end
-        cur_a_id = a_id
+        STELLAR.cur_a_id = a_id
         break
       end
     end
   
-    if not probed then
+    if not STELLAR.probed then
       -- Not from a probe report
-      if tethered then
+      if STELLAR.tethered then
         -- Current asteroid is in tow/tethered
-        tow_id = a_id
+        STELLAR.tow_id = a_id
         res_id = nil  -- Remove to prevent database entry
         -- Clear current asteroid ID since we are towing
-        cur_a_id = ""
+        STELLAR.cur_a_id = ""
         -- Update entity report
         deleteLine()
         cecho("\n<goldenrod>---   ---   ---           (Asteroid #"..a_id.." in tow)")
       else
         -- Asteroid you are touching is not in tow/tethered
-        cur_a_id = a_id
-        tow_id = nil
+        STELLAR.cur_a_id = a_id
+        STELLAR.tow_id = nil
         res_id = nil
         cecho("<orange>  (Not Tethered)")
       end
@@ -95,9 +94,9 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
   -- Only add record to table if it has an ID
   if res_id then
   
-    if asteroid == "asteroid" then
+    if STELLAR.asteroid == "asteroid" then
       -- Don't assign a stale asteroid_units value
-      asteroid_units = ""
+      STELLAR.asteroid_units = ""
     end
   
     cecho("<green>  (NEW)")
@@ -109,16 +108,15 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
         x=x,
         y=y,
         res=res,
-        a_units=asteroid_units,
+        a_units=STELLAR.asteroid_units,
         time=cur_time
       }
     )
   end
   
   tempTimer(0.5, function()
-    disableTrigger("Beacon Capture")
+    disableTrigger("STELLAR Beacon Capture")
     STELLAR.saveDB()
-    --DSM.updateInfoLabel()
     STELLAR.UOF()
   end)
 end

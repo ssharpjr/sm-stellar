@@ -8,21 +8,20 @@
 -- Capture Example:
 -- The probe reports a source of Magnaril, good for 23 refined units of the material.
 
-asteroid = matches[2]
-asteroid = asteroid:lower()
-asteroid_units = matches[3]
-tethered = false
-probed = true
+STELLAR.asteroid = matches[2]:lower()
+STELLAR.asteroid_units = matches[3]
+STELLAR.tethered = false
+STELLAR.probed = true
 
 -- Set asteroid short names
-if asteroid == "isotropic duramine" then asteroid = "duramine" end
+if STELLAR.asteroid == "isotropic duramine" then STELLAR.asteroid = "duramine" end
 
 -- Optional Probe Report
 deleteLine()
 echo("\n\n")
 STELLAR.borderText("STELLAR -+- Probe Report")
 echo("\n")
-cecho("\n<royal_blue>Probe Result: <white>"..asteroid_units.." - <cyan:black>"..asteroid:title())
+cecho("\n<royal_blue>Probe Result: <white>"..STELLAR.asteroid_units.." - <cyan:black>"..STELLAR.asteroid:title())
 echo("\n")
 STELLAR.borderEnd()
 echo("\n\n")

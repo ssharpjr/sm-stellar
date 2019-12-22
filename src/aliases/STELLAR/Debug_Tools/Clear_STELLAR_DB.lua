@@ -3,3 +3,4 @@
 
 
 STELLAR.clearDatabase()
+echo("\n")

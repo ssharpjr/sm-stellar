@@ -55,24 +55,24 @@ function STELLAR.asteroidRemoveFromDB(a_id)
 end
 
 function STELLAR.assignGasID(id)
-  gas_id = id
+  STELLAR.gas_id = id
   -- cecho("\n<white>[<steel_blue>Harvesting<white>]: <green>"..gas_id.."<white> cloud marked for collection \n")
-  STELLAR.echo("<green>"..gas_id.."<gold> cloud marked for collections.\n")
+  STELLAR.echo("<green>"..STELLAR.gas_id.."<gold> cloud marked for collection.\n")
 end
 
 function STELLAR.showVars()
   STELLAR.borderText("STELLAR -+- Variables")
   echo("\n\n")
-  echo("asteroid = ") print(asteroid)
-  echo("asteroid_units = ") print(asteroid_units)
-  echo("gas = ") print(gas)
-  echo("gas_count = ") print(gas_count)
-  echo("gas_id = ") print(gas_id)
-  echo("cur_a_id = ") print(cur_a_id)
-  echo("tow_id = ") print(tow_id)
-  echo("haul = ") print(haul)
-  echo("probed = ") print(probed)
-  echo("tethered = ") print(tethered)
+  echo("asteroid = ") print(STELLAR.asteroid)
+  echo("asteroid_units = ") print(STELLAR.asteroid_units)
+  echo("gas = ") print(STELLAR.gas)
+  echo("gas_count = ") print(STELLAR.gas_count)
+  echo("gas_id = ") print(STELLAR.gas_id)
+  echo("cur_a_id = ") print(STELLAR.cur_a_id)
+  echo("tow_id = ") print(STELLAR.tow_id)
+  echo("haul = ") print(STELLAR.haul)
+  echo("probed = ") print(STELLAR.probed)
+  echo("tethered = ") print(STELLAR.tethered)
   cecho("\n"..STELLAR.colorBorder..string.rep("-", STELLAR.lineWidth))
 end
 
@@ -85,16 +85,16 @@ end
 
 function STELLAR.resetVars()
   -- Clear all variables
-  asteroid = nil
-  asteroid_units = nil
-  gas = nil
-  gas_count = nil
-  gas_id = nil
-  haul = nil
-  tow_id = nil
-  cur_a_id = nil
-  probed = false
-  tethered = false
+  STELLAR.asteroid = nil
+  STELLAR.asteroid_units = nil
+  STELLAR.gas = nil
+  STELLAR.gas_count = nil
+  STELLAR.gas_id = nil
+  STELLAR.haul = nil
+  STELLAR.tow_id = nil
+  STELLAR.cur_a_id = nil
+  STELLAR.probed = false
+  STELLAR.tethered = false
   
   -- Update Output Console
   STELLAR.UOF()

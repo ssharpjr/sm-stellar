@@ -62,7 +62,7 @@
     "patterns": [
       {
         "pattern": "^The ship collects the surrounding (.*) into its scoops, bringing the collected total to (\\d+)\\.$",
-        "type": "substring"
+        "type": "regex"
       }
     ]
   },

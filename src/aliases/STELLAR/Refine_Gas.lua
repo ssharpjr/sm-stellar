@@ -6,11 +6,13 @@
 
 send("refinery "..matches[2].." queue gas")
 
-gas = nil
-gas_count = nil
-haul = nil
+STELLAR.gas = nil
+STELLAR.gas_count = nil
+-- STELLAR.haul = nil
 
 -- Check if hauling an asteroid too
-if tow_id then
+if STELLAR.tow_id then
   STELLAR.echo("You are still towing an asteroid.")
+else
+  STELLAR.haul = nil
 end
