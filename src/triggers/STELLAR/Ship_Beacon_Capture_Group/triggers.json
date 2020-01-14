@@ -10,6 +10,7 @@
   },
   {
     "name": "STELLAR Beacon Capture",
+    "isActive": "no",
     "patterns": [
       {
         "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a cloud of harvestable\\s(\\S+)",

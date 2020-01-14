@@ -1,5 +1,14 @@
 -- STELLAR Change Log
 
+-- Version v0.4-beta
+  -- 2020-JAN-14
+  -- Added STELLAR.showMainDisplayOutput variable to show/suppress Main Window output for custom UIs.
+  -- Updated Help Files to reflect this change.
+
+-- Version v0.3-beta
+  -- 2020-JAN-14
+  -- Corrected some Regex and variables
+
 -- Version v0.2-beta
   -- 2019-DEC-22
   -- Updated all variables to be prefixed with 'STELLAR.', creating isolation to this package.

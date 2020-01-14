@@ -25,32 +25,35 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
     end
   end
   
-  -- Update entities report if asteroid is in the database and identified
-  for k, v in pairs(stellardb) do
-    if stellardb[k]["a_id"] == a_id and stellardb[k]["res"] ~= "asteroid" then
-      -- Found in the database and it has been identified. Update entity report
-      
-      -- Gas Filter
-      if a_id:len() < 1 then
-        -- (report is duplicating. Not working yet. Using default report)
-        -- cecho("\n<gold>"..x..string.rep(" ", 6-x:len())..y..string.rep(" ", 6-y:len())..dist..string.rep(" ", 3-dist:len())..dir
-        -- ..string.rep(" ", 11-dir:len()).."Gas Cloud: ".."<green>"..v.res:title()
-        -- )
-        break
-      else
+  -- Real Time Entity Report
+  if STELLAR.showMainDisplayOutput then
+    -- Update entities report if asteroid is in the database and identified
+    for k, v in pairs(stellardb) do
+      if stellardb[k]["a_id"] == a_id and stellardb[k]["res"] ~= "asteroid" then
+        -- Found in the database and it has been identified. Update entity report
+        
+        -- Gas Filter
+        if a_id:len() < 1 then
+          -- (report is duplicating. Not working yet. Using default report)
+          -- cecho("\n<gold>"..x..string.rep(" ", 6-x:len())..y..string.rep(" ", 6-y:len())..dist..string.rep(" ", 3-dist:len())..dir
+          -- ..string.rep(" ", 11-dir:len()).."Gas Cloud: ".."<green>"..v.res:title()
+          -- )
+          break
+        else
+          deleteLine()
+          -- Asteroid
+          cecho("\n<gold>"..x..string.rep(" ", 6-x:len())..y..string.rep(" ", 6-y:len())..dist..string.rep(" ", 3-dist:len())..dir
+            ..string.rep(" ", 11-dir:len()).."Asteroid: #"..a_id.." ".."<dodger_blue>"..v.res:title()..", <white>"..v.a_units.." units"
+          )
+          break
+        end
+      elseif stellardb[k]["a_id"] == a_id and res == "asteroid" then
+        -- Not in the database and not identified. Update entity report
         deleteLine()
-        -- Asteroid
         cecho("\n<gold>"..x..string.rep(" ", 6-x:len())..y..string.rep(" ", 6-y:len())..dist..string.rep(" ", 3-dist:len())..dir
-          ..string.rep(" ", 11-dir:len()).."Asteroid: #"..a_id.." ".."<dodger_blue>"..v.res:title()..", <white>"..v.a_units.." units"
+          ..string.rep(" ", 11-dir:len()).."a mineable asteroid (#"..a_id..")<orchid>  (Not Identified)"
         )
-        break
       end
-    elseif stellardb[k]["a_id"] == a_id and res == "asteroid" then
-      -- Not in the database and not identified. Update entity report
-      deleteLine()
-      cecho("\n<gold>"..x..string.rep(" ", 6-x:len())..y..string.rep(" ", 6-y:len())..dist..string.rep(" ", 3-dist:len())..dir
-        ..string.rep(" ", 11-dir:len()).."a mineable asteroid (#"..a_id..")<orchid>  (Not Identified)"
-      )
     end
   end
   
@@ -77,15 +80,19 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
         res_id = nil  -- Remove to prevent database entry
         -- Clear current asteroid ID since we are towing
         STELLAR.cur_a_id = ""
-        -- Update entity report
-        deleteLine()
-        cecho("\n<goldenrod>---   ---   ---           (Asteroid #"..a_id.." in tow)")
+        if STELLAR.showMainDisplayOutput then
+          -- Update entity report
+          deleteLine()
+          cecho("\n<goldenrod>---   ---   ---           (Asteroid #"..a_id.." in tow)")
+        end
       else
         -- Asteroid you are touching is not in tow/tethered
         STELLAR.cur_a_id = a_id
         STELLAR.tow_id = nil
         res_id = nil
-        cecho("<orange>  (Not Tethered)")
+        if STELLAR.showMainDisplayOutput then
+          cecho("<orange>  (Not Tethered)")
+        end
       end
     end
   end
@@ -99,7 +106,9 @@ function STELLAR.processBeacon(zone, cur_time, x, y, dist, dir, res, a_id, res_i
       STELLAR.asteroid_units = ""
     end
   
-    cecho("<green>  (NEW)")
+    if STELLAR.showMainDisplayOutput then
+      cecho("<green>  (NEW)")
+    end
     table.insert(stellardb,
       {
         res_id=res_id,

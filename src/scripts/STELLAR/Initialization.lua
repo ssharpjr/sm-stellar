@@ -15,7 +15,10 @@
 STELLAR = STELLAR or {}
 stellardb = stellardb or {}
 
-STELLAR.version = "v0.3-beta"
+STELLAR.version = "v0.4-beta"
+
+-- Show Main Display Output (Suppress output option for custom UIs)
+STELLAR.showMainDisplayOutput = false
 
 -- Set Update Output Function (replace with your miniconsole/label/whatever)
 function STELLAR.UOF()
@@ -24,12 +27,6 @@ function STELLAR.UOF()
     DSM.updateInfoLabel()
   end
 end
-
--- Set/Reset Vars
--- STELLAR.asteroid = STELLAR.asteroid or ""
--- STELLAR.asteroid_units = STELLAR.asteroid_units or ""
--- STELLAR.gas = STELLAR.gas or ""
--- STELLAR.gas_count = STELLAR.gas_count or ""
 
 -- STELLAR Customizations --
 
