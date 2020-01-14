@@ -1,5 +1,5 @@
 -- Mudlet Alias Setup (minus the quotes)
--- Pattern: "^sreport"
+-- Pattern: "^(sreport|SREPORT)$"
 
 
 -- Show Tracking Report

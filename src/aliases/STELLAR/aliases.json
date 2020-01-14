@@ -1,19 +1,19 @@
 [
   {
     "name": "Check Current Haul",
-    "regex": "^hcheck$"
+    "regex": "^(hcheck|HCHECK)$"
   },
   {
     "name": "Refinery List Here",
-    "regex": "^refh$"
+    "regex": "^(refh|REFH)$"
   },
   {
     "name": "Refine Asteroid",
-    "regex": "^refqa (\\d+)"
+    "regex": "^(refqa|REFQA) (\\d+)"
   },
   {
     "name": "Refine Gas",
-    "regex": "^refqg (\\d+)"
+    "regex": "^(refqg|REFQG) (\\d+)"
   },
   {
     "name": "Help System Single Page",
@@ -25,6 +25,6 @@
   },
   {
     "name": "Show Tracking Report",
-    "regex": "^sreport"
+    "regex": "^(sreport|SREPORT)$"
   }
 ]

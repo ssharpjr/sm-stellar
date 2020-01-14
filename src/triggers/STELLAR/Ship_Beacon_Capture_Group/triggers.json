@@ -12,11 +12,11 @@
     "name": "STELLAR Beacon Capture",
     "patterns": [
       {
-        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a (.*) of harvestable\\s(\\S+)",
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a cloud of harvestable\\s(\\S+)",
         "type": "regex"
       },
       {
-        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a (.*)\\s(\\w+)\\s\\(\\#(\\d+)\\)",
+        "pattern": "^(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\w+)\\s+a mineable (\\w+)\\s\\(\\#(\\d+)\\)",
         "type": "regex"
       }
     ]

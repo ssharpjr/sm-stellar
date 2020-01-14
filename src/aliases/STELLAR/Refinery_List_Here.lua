@@ -1,5 +1,5 @@
 -- Mudlet Alias Setup (minus the quotes)
--- Pattern: "^refh$"
+-- Pattern: "^(refh|REFH)$"
 
 
 -- Highlights the refinery that is capable of refining your current haul

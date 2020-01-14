@@ -1,5 +1,5 @@
 -- Set harvestables colors based on their appearance
--- Asteroids added for conformity. Change their colors to your preference
+-- Asteroids added for conformity. Change colors to your preference.
 
 STELLAR.harvest_colors = {
   asteroid="cadet_blue",

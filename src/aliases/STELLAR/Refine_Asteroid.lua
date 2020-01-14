@@ -1,10 +1,9 @@
 -- Mudlet Alias Setup (minus the quotes)
--- Pattern: "^refqa (\d+)"
+-- Pattern: "^(refqa|REFQA) (\d+)"
 
 
 -- Queue your asteroid and reset variables
-
-send("refinery "..matches[2].." queue asteroid")
+send("refinery "..matches[3].." queue asteroid")
 
 STELLAR.asteroid = nil
 STELLAR.asteroid_units = nil

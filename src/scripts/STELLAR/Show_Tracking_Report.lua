@@ -1,5 +1,8 @@
 function STELLAR.trackingReport()
   if stellardb then
+    STELLAR.asteroid = STELLAR.asteroid or ""
+    STELLAR.asteroid_units = STELLAR.asteroid_units or ""
+    STELLAR.gas = STELLAR.gas or ""
     if STELLAR.asteroid_units:len() >= 1 then
       STELLAR.au_display = "<white>, "..STELLAR.asteroid_units.." units"
     else
@@ -10,13 +13,13 @@ function STELLAR.trackingReport()
     STELLAR.borderText("STELLAR -+- Tracking Report")
     echo("\n")
     
-    if STELLAR.gas then
+    if STELLAR.gas:len() >= 1 then
       if STELLAR.gas_count then
         cecho("\n<steel_blue>  Hauling: <cyan>"..STELLAR.gas:title().."<papaya_whip>, "..STELLAR.gas_count.."/200 units")
       end
     end
     
-    if STELLAR.asteroid then
+    if STELLAR.asteroid:len() >= 1 then
       if STELLAR.tethered then
         cecho("\n<steel_blue>  Towing:<papaya_whip> Asteroid #"..STELLAR.tow_id.." - <cyan>"..STELLAR.asteroid:title()
           ..STELLAR.au_display

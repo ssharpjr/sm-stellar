@@ -1,6 +1,6 @@
 -- Mudlet Trigger Setup (minus the quotes)
--- Data Line 1 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a (.*) of harvestable\s(\S+)"
--- Data Line 2 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a (.*)\s(\w+)\s\(\#(\d+)\)"
+-- Data Line 1 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a cloud of harvestable\s(\S+)"
+-- Data Line 2 (perl regex): "^(\d+)\s+(\d+)\s+(\d+)\s+(\w+)\s+a mineable (\w+)\s\(\#(\d+)\)"
 
 
 -- Capture Example:
@@ -18,13 +18,12 @@ local x = matches[2]
 local y = matches[3]
 local dist = matches[4]
 local dir = matches[5]
-local class = matches[6]:lower()
-local res = matches[7]
+local res = matches[6]
 local a_id = ""
 
-if matches[8] then
+if matches[7] then
   -- Asteroids have this ID
-  a_id = matches[8]
+  a_id = matches[7]
 end
 
 -- Create unique resource ID

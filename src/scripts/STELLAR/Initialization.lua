@@ -8,7 +8,6 @@
 -- Client: Mudlet (http://www.mudlet.org)                                             --
 --                                                                                    --
 -- Package Author: Daikojun (github.com/ssharpjr)                                     --
--- Version: 1.0 (initial release)                                                     --
 -- Source: (https://github.com/ssharpjr/sm-stellar)                                   --
 ----------------------------------------------------------------------------------------
 
@@ -16,7 +15,7 @@
 STELLAR = STELLAR or {}
 stellardb = stellardb or {}
 
-STELLAR.version = "0.2-beta"
+STELLAR.version = "v0.3-beta"
 
 -- Set Update Output Function (replace with your miniconsole/label/whatever)
 function STELLAR.UOF()
@@ -25,6 +24,12 @@ function STELLAR.UOF()
     DSM.updateInfoLabel()
   end
 end
+
+-- Set/Reset Vars
+-- STELLAR.asteroid = STELLAR.asteroid or ""
+-- STELLAR.asteroid_units = STELLAR.asteroid_units or ""
+-- STELLAR.gas = STELLAR.gas or ""
+-- STELLAR.gas_count = STELLAR.gas_count or ""
 
 -- STELLAR Customizations --
 

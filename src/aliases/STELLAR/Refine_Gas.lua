@@ -1,10 +1,10 @@
 -- Mudlet Alias Setup (minus the quotes)
--- Pattern: "^refqg (\d+)"
+-- Pattern: "^(refqg|REFQG) (\d+)"
 
 
 -- Queue your gas and reset variables
 
-send("refinery "..matches[2].." queue gas")
+send("refinery "..matches[3].." queue gas")
 
 STELLAR.gas = nil
 STELLAR.gas_count = nil
