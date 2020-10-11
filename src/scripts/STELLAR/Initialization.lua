@@ -15,10 +15,10 @@
 STELLAR = STELLAR or {}
 stellardb = stellardb or {}
 
-STELLAR.version = "v0.4-beta"
+STELLAR.version = "v0.5-beta"
 
 -- Show Main Display Output (Suppress output option for custom UIs)
-STELLAR.showMainDisplayOutput = false
+STELLAR.showMainDisplayOutput = true
 
 -- Set Update Output Function (replace with your miniconsole/label/whatever)
 function STELLAR.UOF()

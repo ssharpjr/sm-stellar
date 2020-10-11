@@ -1,5 +1,9 @@
 -- STELLAR Change Log
 
+-- Version v0.5-beta
+-- 2020-SEP-07
+-- Refactored the table counting functions to use pairs() instead of '#'. This was causing an issue with the SREPORT crashing.
+
 -- Version v0.4-beta
   -- 2020-JAN-14
   -- Added STELLAR.showMainDisplayOutput variable to show/suppress Main Window output for custom UIs.

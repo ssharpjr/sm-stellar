@@ -17,6 +17,12 @@ function STELLAR.borderEnd()
   cecho("\n"..STELLAR.colorBorder..string.rep("-", STELLAR.lineWidth))
 end
 
+function STELLAR.tableLength(t)
+  local count = 0
+  for _ in pairs(t) do count = count + 1 end
+  return count
+end
+
 function STELLAR.clearDatabase()
   -- Clear the stellar database
   stellardb = {}

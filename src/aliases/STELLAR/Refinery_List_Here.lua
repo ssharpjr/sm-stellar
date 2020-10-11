@@ -33,7 +33,7 @@ if STELLAR.haul then
   if HaulHighlightID then killTrigger(HaulHighlightID) end
   HaulHighlightID = tempTrigger(STELLAR.haul, function() selectString(line, 1) fg("gold") deselect() resetFormat() end)
 elseif STELLAR.haul == nil or STELLAR.haul == "" then 
-  killTrigger(HaulHighlightID)
+  if HaulHighlightID then killTrigger(HaulHighlightID) end
 end
 
 send("refinery list here")

@@ -6,7 +6,7 @@ function STELLAR.trackingReport()
     if STELLAR.asteroid_units:len() >= 1 then
       STELLAR.au_display = "<white>, "..STELLAR.asteroid_units.." units"
     else
-      au_display = ""
+      STELLAR.au_display = ""
     end
   
     echo("\n")
@@ -28,7 +28,7 @@ function STELLAR.trackingReport()
     end
     
     -- Show Report from STELLAR database
-    if #stellardb >= 1 then
+    if STELLAR.tableLength(stellardb) >= 1 then
       -- Report if there is something to report
       cecho("\n<light_goldenrod>   Resource"..string.rep(" ", 8).."U"..string.rep(" ", 3).."Location"
         ..string.rep(" ", 11).."Age"
